@@ -26,16 +26,39 @@ let users = {
     age: 30
   };
   
-  let clone = {}; // 新的空对象
+  let clone = {}; 
   
-  // 将 users 中所有的属性拷贝到其中
+
   for (let key in users) {
     clone[key] = users[key];
   }
   
-  // 现在 clone 是带有相同内容的完全独立的对象
-  clone.name = "Pete"; // 改变了其中的数据
+
+  clone.name = "Pete"; 
   
-  console.log(users.name); // 原来的对象中的 name 属性依然是 John
+  console.log(users.name); 
 
 //2.使用 Object.assign() 方法
+
+let user1 = { name: "John" };
+let q = { age: 30 };
+let w = { city: "New York" };
+
+Object.assign(user1, q, w);
+
+console.log(user1);
+
+//如果被拷贝的属性的属性名已经存在，那么它会被覆盖
+
+let user2 = { name: "John" };
+
+Object.assign(user2, { name: "Pete" });
+
+console.log(user2);
+
+//简单克隆
+let user3 = { name: "John" };
+
+let copy = Object.assign({}, user3);
+
+console.log(copy);
