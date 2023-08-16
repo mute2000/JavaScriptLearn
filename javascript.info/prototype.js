@@ -45,3 +45,27 @@ let a = {
   money: 2000,
   __proto__
 };
+
+/*我们有两只仓鼠：speedy 和 lazy 都继承自普通的 hamster 对象。
+当我们喂其中一只的时候，另一只也吃饱了。为什么？如何修复它？ */
+let hamster = {
+  stomach: [],
+
+  eat(food) {
+    this.stomach.push(food);
+  }
+};
+
+let speedy = {
+  __proto__: hamster
+};
+
+let lazy = {
+  __proto__: hamster
+};
+
+speedy.eat("apple");
+alert( speedy.stomach ); 
+alert( lazy.stomach ); 
+
+//因为上面的代码中的两个仓鼠都继承自普通的 hamster 对象，所以它们吃饱了。如果想要修复这个问题，你需要将两只仓鼠都添加一个属于自己的 stomach 属性。
