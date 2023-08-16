@@ -19,15 +19,15 @@ let pockets = {
 */
 
 let head = {
-    glasses: 1
-  };
+  glasses: 1
+};
   
-  let table = {
+let table = {
     pen: 3,
     __proto__: head
   };
   
-  let bed = {
+let bed = {
     sheet: 1,
     pillow: 2,
     __proto__: table
@@ -40,3 +40,8 @@ let head = {
 
 console.log(pockets.pen);
 console.log(bed.glasses);
+
+let a = {
+  money: 2000,
+  __proto__
+};
